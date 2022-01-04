@@ -8,15 +8,15 @@
     Turtle
   </title>
   <!-- Favicon -->
-  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="{{ asset("./assets/img/brand/favicon.png") }}" rel="icon" type="image/png">
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="{{ asset('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}" rel="stylesheet">
   <!-- Icons -->
-  <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
-  <link href="./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
+  <link href="{{ asset('./assets/js/plugins/nucleo/css/nucleo.css') }}" rel="stylesheet" />
+  <link href="{{ asset('./assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="./assets/css/argon-dashboard.css?v=1.1.2" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link href="{{ asset('./assets/css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
+  
 </head>
 
 <body class="">
@@ -28,7 +28,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="./index.html">
-        <img src="./assets/img/brand/logo.svg" class="navbar-brand-img" alt="...">
+        <img src="{{ asset('./assets/img/brand/logo.svg') }}" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -47,8 +47,7 @@
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
               <span class="avatar avatar-sm rounded-circle">
-                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg
-">
+                <img alt="Image placeholder" src="./assets/img/theme/team-1-800x800.jpg">
               </span>
             </div>
           </a>
@@ -132,7 +131,7 @@
             </a>
           </li>
           <li class="nav-item">
-            {{-- <a class="nav-link " href="{{ route('users.index') }}"> --}}
+            <a class="nav-link " href="{{ route('users.index') }}">
               <i class="ni ni-bullet-list-67 text-red"></i> Users
             </a>
           </li>
@@ -155,7 +154,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+        {{-- <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a> --}}
         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
@@ -173,7 +172,7 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
+                  <img alt="Image placeholder" src="{{ asset('./assets/img/theme/team-4-800x800.jpg') }}">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold">Jessica Jones</span>
@@ -211,7 +210,7 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+    <div class="header bg-gradient-success pb-8 pt-5 pt-md-8">
         <div class="container-fluid">
           <div class="header-body">
               <!-- Card stats -->

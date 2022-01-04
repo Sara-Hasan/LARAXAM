@@ -4,34 +4,36 @@
 <div class="col-xl-8 mb-5 mb-xl-0">
 <?php if (isset( $_GET["do"])) {?>
              <div class="row" style='border-radius: 5px; background-color: #ffffff;  padding: 20px;'>
-              <form action="{{ route('question.store') }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
               @csrf              
               <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-              <strong>Question:</strong>
-              <input type="text" name="question" class="form-control" >
-              @error('question')
+              <strong>Name:</strong>
+              <input type="text" name="name" class="form-control" >
+              @error('name')
               <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
               @enderror
               </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="form-group">
-              <strong>Exam name:</strong>
-              <select name="exam_id">
-                <?php
-                    foreach ($exam as $item ) { ?>
-                      <option value="{{ $item->id }}">
-                        {{ $item->name }}
-                      </option>
-                <?php  } ?>
-              </select>
-              @error('exam_id')
-              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-              @enderror
-              </div>
-              </div>
-              <button type="submit" class="btn btn-primary ml-3">Submit</button>
+                <div class="form-group">
+                <strong>Email:</strong>
+                <input type="email" name="email" class="form-control" >
+                @error('email')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
+                </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                    <strong>Password:</strong>
+                    <input type="password" name="password" class="form-control" >
+                    @error('password')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                    </div>
+                </div>    
+              <button type="submit" class="btn btn-success ml-3">Submit</button>
                </form>
               </div>
                <?php
@@ -46,7 +48,7 @@
           <div class="card shadow">
             <div class="card-header border-0">
               <h3 class="mb-0">Question tables</h3>
-              <a class="create" href="?do=add"><button type="button" class="btn btn-success left">Create Question</button></a>
+              <a class="create" href="?do=add"><button type="button" class="btn btn-success left">Create User</button></a>
               @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                   <p>{{ $message }}</p>
@@ -65,8 +67,9 @@
                 <thead class="thead-light">
                   <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Question</th>
-                    <th scope="col">Exam name</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -81,20 +84,23 @@
                       </div>
                     </th>
                     <td>
-                      {{ $item->question }}
+                      {{ $item->name }}
                     </td>
                     <td>
-                      <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i> {{ $item->exam_id}}
-                      </span>
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-warning"></i> {{ $item->email}}
+                        </span>
+                    </td>
+                    <td>
+                    {{ $item->password }}
                     </td>
                     <td class="text-right">
-                      <form action="{{ route('question.destroy',$item->id) }}" method="post">
+                      <form action="{{ route('users.destroy',$item->id) }}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </form>
-                    <a class="btn btn-primary" href="{{ route('question.edit',$item->id) }}"><i class="far fa-edit"></i></a>
+                    <a class="btn btn-primary" href="{{ route('users.edit',$item->id) }}"><i class="far fa-edit"></i></a>
                     </td>
                   </tr>
                   @endforeach

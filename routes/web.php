@@ -39,5 +39,8 @@ Route::resource('question', 'App\Http\Controllers\QuestionController');
 Route::resource('answer', AnswerController::class);
 Route::resource('answer', 'App\Http\Controllers\AnswerController');
 
+Route::resource('users', UserController::class);
+Route::resource('users', 'App\Http\Controllers\UserController');
+
 
 
