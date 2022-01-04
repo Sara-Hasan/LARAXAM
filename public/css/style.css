@@ -176,12 +176,14 @@ footer {
 	background-color: #fff;
 	border-radius: 4px !important;
 	overflow: hidden;
-	border: 1px solid #dbdbdb;
+	border: 1px solid #dbdbdb;	
 }
+
 .login-card-header {
 	padding: 0.75rem 1.25rem;
-	font-size: 24px;
+	font-size: 28px;
 	text-align: center;
+	font-weight: 500;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .form-group {
@@ -216,7 +218,10 @@ footer {
 .checkbox:checked ~ .avatar {
 	border: 2px solid #89a382;
 }
-
+.control-label{
+	font-size: 17px;
+	font-weight: 300;
+}
 /* dashboard */
 .dashboard-header {
 	background: #eefef0;

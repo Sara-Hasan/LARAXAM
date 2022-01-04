@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Exam;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // return view('home');
+        
+    }
+    public function create()
+    {
+        $category = Category::all();
+        $exams = Exam::all();
+        return view ('/home', compact('category','exams'));
+    }
+    public function show(Request $request)
+    {
+        return view('category',compact('category'));
     }
 }
