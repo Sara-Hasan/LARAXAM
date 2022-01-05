@@ -47,7 +47,7 @@ class AnswerController extends Controller
             'choice4' => 'required',
             'correct' => 'required',
             'exam_id' => 'required',
-            'q_id'    => 'required',
+            'q_id'    => 'required'
         ]);
         $answer = new Answer([
             'choice1' => $request->choice1,

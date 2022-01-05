@@ -42,5 +42,8 @@ Route::resource('answer', 'App\Http\Controllers\AnswerController');
 Route::resource('users', UserController::class);
 Route::resource('users', 'App\Http\Controllers\UserController');
 
+// Route::get('/questionexam', [App\Http\Controllers\QuestionEaxmController::class, 'create'])->name('questionexam');
+Route::resource('questionexam', QuestionEaxmController::class);
+Route::resource('questionexam', 'App\Http\Controllers\QuestionEaxmController');
 
 

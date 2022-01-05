@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','question','exam_id'];
+    protected $fillable = ['id','question','choice1','choice2','choice3','choice4','correct','exam_id'];
     //for Question table with Exam table one-many
     public function exam(){
         return $this->belongsTo(Exam::class);

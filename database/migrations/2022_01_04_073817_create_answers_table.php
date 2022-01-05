@@ -15,18 +15,19 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->string('choice1');
-            $table->string('choice2');
-            $table->string('choice3');
-            $table->string('choice4');
-            $table->string('correct');
-            $table->unsignedBigInteger('q_id');
-            $table->unsignedBigInteger('exam_id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('question');
+            $table->string('given_answer');
+            $table->string('true_answer');
             $table->timestamps();
-            $table->foreign('q_id')->references('id')->on('questions')
-            ->onDelete('cascade');
-            $table->foreign('exam_id')->references('id')->on('exams')
-            ->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->unsignedBigInteger('q_id');
+            // $table->unsignedBigInteger('exam_id');
+            // $table->foreign('q_id')->references('id')->on('questions')
+            // ->onDelete('cascade');
+            // $table->foreign('exam_id')->references('id')->on('exams')
+            // ->onDelete('cascade');
+
         });
     }
 

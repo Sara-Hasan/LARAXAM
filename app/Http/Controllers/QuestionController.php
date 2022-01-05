@@ -44,10 +44,20 @@ class QuestionController extends Controller
     {
         $request->validate([
             'question' => 'required',
-            'exam_id' => 'required',
+            'choice1' => 'required',
+            'choice2' => 'required',
+            'choice3' => 'required',
+            'choice4' => 'required',
+            'correct' => 'required',
+            'exam_id' => 'required'
         ]);
         $question = new Question([
             'question' => $request->question,
+            'choice1' => $request->choice1,
+            'choice2' => $request->choice2,
+            'choice3' => $request->choice3,
+            'choice4' => $request->choice4,
+            'correct' => $request->correct,
             'exam_id' => $request->exam_id
             ]);
         $question->save();
@@ -90,9 +100,19 @@ class QuestionController extends Controller
     {
         $request->validate([
             'question' => 'required',
-            'exam_id' => 'required',
+            'choice1' => 'required',
+            'choice2' => 'required',
+            'choice3' => 'required',
+            'choice4' => 'required',
+            'correct' => 'required',
+            'exam_id' => 'required'
         ]);
         $question->question = $request->question;
+        $question->choice1 = $request->choice1;
+        $question->choice2 = $request->choice2;
+        $question->choice3 = $request->choice3;
+        $question->choice4 = $request->choice4;
+        $question->correct = $request->correct;
         $question->exam_id = $request->exam_id;
         $question->save();
         return redirect()->route('question.index')

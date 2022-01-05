@@ -16,6 +16,51 @@
               </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                <strong>Choice1:</strong>
+                <input type="text" name="choice1" class="form-control" >
+                @error('choice1')
+                <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
+                </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                      <strong>Choice2:</strong>
+                      <input type="text" name="choice2" class="form-control" >
+                      @error('choice2')
+                      <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                      @enderror
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                  <strong>Choice3:</strong>
+                  <input type="text" name="choice3" class="form-control" >
+                  @error('choice3')
+                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                  @enderror
+                  </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                  <strong>Choice4:</strong>
+                  <input type="text" name="choice4" class="form-control" >
+                  @error('choice4')
+                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                  @enderror
+                  </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <div class="form-group">
+                  <strong>Correct:</strong>
+                  <input type="text" name="correct" class="form-control" >
+                  @error('correct')
+                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                  @enderror
+                  </div>
+                  </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
               <strong>Exam name:</strong>
               <select name="exam_id">
@@ -66,6 +111,11 @@
                   <tr>
                     <th scope="col">id</th>
                     <th scope="col">Question</th>
+                    <th scope="col">choice1</th>
+                    <th scope="col">choice2</th>
+                    <th scope="col">choice3</th>
+                    <th scope="col">choice4</th>
+                    <th scope="col">correct</th>
                     <th scope="col">Exam name</th>
                     <th scope="col"></th>
                   </tr>
@@ -82,6 +132,21 @@
                     </th>
                     <td>
                       {{ $item->question }}
+                    </td>
+                    <td>
+                      {{ $item->choice1 }}
+                    </td>
+                    <td>
+                        {{ $item->choice2 }}
+                    </td>
+                    <td>
+                      {{ $item->choice3 }}
+                    </td>
+                    <td>
+                        {{ $item->choice4 }}
+                    </td>
+                    <td>
+                        {{ $item->correct }}
                     </td>
                     <td>
                       <span class="badge badge-dot mr-4">
