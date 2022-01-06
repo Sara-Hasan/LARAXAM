@@ -20,8 +20,8 @@
       </div>
     </div>
     <div class="buttons">
-      <a href="{{ route('home') }}">        <button class="btn borderBtn btn-width mt-1 me-1 quit">Exit Quiz</button></a>
-      <a href="{{ route('questionexam.create') }}"><button class="btn primaryBtn btn-width mt-1 me-1 restart">Continue</button></a>
+      <a href="{{ route('home') }}">               <button class="btn borderBtn btn-width mt-1 me-1 quit">Exit Quiz</button></a>
+      <a href="{{ route('questionexam.create' , $item->id) }}"><button class="btn primaryBtn btn-width mt-1 me-1 restart">Continue</button></a>
     </div>
   </div>
 

@@ -59,7 +59,7 @@
                               class="dm-none">Question</p></li>
                         <li> <i class="far fa-history"></i><p class="mx-1">{{ $item->time }}</p><p
                               class="dm-none">Minute</p></li>
-                        <li><a href="quiz" id="quizStart1" class="btn primaryBtn start-btn ">Start</a></li>
+                        <li><a href="{{ route('questionexam.create' , $item->id) }}" id="quizStart1" class="btn primaryBtn start-btn ">Start</a></li>
                      </ul>
                   </div>
                </div>
