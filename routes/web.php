@@ -46,4 +46,5 @@ Route::resource('users', 'App\Http\Controllers\UserController');
 Route::resource('questionexam', QuestionEaxmController::class);
 Route::resource('questionexam', 'App\Http\Controllers\QuestionEaxmController');
 
+Route::resource('result', 'App\Http\Controllers\QuestionEaxmController');
 

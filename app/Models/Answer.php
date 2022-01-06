@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','user_id','question','given_answer','true_answer'];
+    protected $fillable = ['id','user_id','question','given_answer'];
     public function user(){
         return $this->belongsTo(User::class);
     }

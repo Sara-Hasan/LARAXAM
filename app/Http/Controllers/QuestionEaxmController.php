@@ -30,7 +30,7 @@ class QuestionEaxmController extends Controller
     public function create()
     {
         $question = Question::all();
-        // $answer = Answer::all();
+        $answer = Answer::all();
         $profile = Profile::all();
         $user = User::all();
         $login_user =auth()->user()->id;
@@ -46,32 +46,49 @@ class QuestionEaxmController extends Controller
      */
     public function store(Request $request)
     {
+        $score = 0;
+        $counter = 0;
+        $question = Question::all();
+        $profile = Profile::all();
+        foreach($question as $items){
+            // foreach($items->question as $items){
+                if($items->question == $request->question){
+                    if ($items->correct == $request->given_answer.$counter){
+                        $score += 1;
+                    }
+                // }
+                
+            }
+            $counter++;
+                dd($request->given_answer.$counter);
+        }
+        // dd($request->given_answer0); 
+        // dd($request->question); 
         $request->validate([
-            'question' => 'required',
             'user_id' => 'required',
-            'given_answer' => 'required',
-            'true_answer' => 'required'
+            'score' => 'required'
         ]);
-        $question = new Answer([
-            'question' => $request->question,
-            'user_id' => $request->user_id,
-            'given_answer' => $request->given_answer,
-            'true_answer' => $request->true_answer
-            ]);
-        $question->save();
+        $profile = new Profile([
+            'user_id' => auth()->user()->id,
+            'score' => $score
+        ]);
+        $profile->save();
         return redirect()->route('questionexam.create')
-        ->with('success','question has been created successfully.');
+        ->with('success','answer has been created successfully.');
     }
+public function calculate()
+{
 
+}
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Answer $answer)
     {
-        //
+        return view('questionexam', compact('question','answer','profile','user'));
     }
 
     /**
