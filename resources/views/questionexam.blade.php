@@ -31,31 +31,31 @@
     </div>
       <hr> 
       <?php } ?>
-    <button type="submit" class="btn btn-primary ml-3">Submit</button>
+    <button type="submit" class="btn btn-success ml-3">Submit</button>
 </form>
 
     </section>
      <!DOCTYPE html>
 <html>
 <style>
-/* .label {
+.label {
   display: block;
-  /* position: relative; */
-  /* padding-left: 40px;
+  position: relative; 
+  padding-left: 40px; 
   margin-bottom: 20px;
   cursor: pointer; */
-  /* font-size: 25px; */
-} */
+  font-size: 25px;
+}
 
 /* Hide the default radio button */
-/* .label input {
+.label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-} */
+} 
 
 /* custom radio button */
-/* .check {
+.check {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +70,7 @@
 }
 
 .label input:checked ~ .check {
-  background-color: blue;
+  background-color: green;
 }
 
 .check:after {
