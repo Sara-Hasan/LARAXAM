@@ -24,6 +24,11 @@ Route::get('/quiz', function () {
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth','admin']], function(){
+    Route::get('/dashboard', function (){
+        return view('admin.dashboard');
+    });
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'create'])->name('home');
 
@@ -47,4 +52,3 @@ Route::resource('questionexam', QuestionEaxmController::class);
 Route::resource('questionexam', 'App\Http\Controllers\QuestionEaxmController');
 
 Route::resource('result', 'App\Http\Controllers\QuestionEaxmController');
-

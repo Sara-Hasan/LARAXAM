@@ -44,25 +44,23 @@ class QuestionEaxmController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
         $score = 0;
         $counter = 0;
+        // $id = $request->exam_id;
         $question = Question::all();
         $profile = Profile::all();
         foreach($question as $items){
-            // foreach($items->question as $items){
                 if($items->question == $request->question){
                     if ($items->correct == $request->given_answer.$counter){
                         $score += 1;
                     }
-                // }
-                
-            }
-            $counter++;
-                dd($request->given_answer.$counter);
+                // dd($request->given_answer.$counter);
+                $counter++;
+            }         
         }
-        // dd($request->given_answer0); 
+        dd($request->given_answer0); 
         // dd($request->question); 
         $request->validate([
             'user_id' => 'required',

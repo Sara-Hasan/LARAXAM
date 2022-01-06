@@ -3,27 +3,28 @@
 <section class="container">
   <?php $counter = 0; ?>
     <?php foreach ($question as $item ) { ?> 
-<form action="{{ route('questionexam.store') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('questionexam.store',$item->exam_id) }}" method="post" enctype="multipart/form-data">
     @csrf  
-    <input type="text" value=" {{ auth()->user()->id}}" name="user_id" hidden>
+    <input type="text" value="{{ auth()->user()->id}}" name="user_id" hidden>
+    <input type="text" value="{{ $item->exam_id}}" name="exam_id" hidden>
     <div class="form-group">
-        <h2> {{ $item->question }} <input type="text" value="{{ $item->question }}" name="question"hidden></h2>
+        <h2> {{$item->question}} <input type="text" value="{{$item->question}}" name="question"hidden></h2>
     </div>    
     <div class="form-group">        
     <label class="label">{{ $item->choice1 }}
-        <input type="radio"  value="{{ $item->choice1 }}" name="given_answer{{ $counter }}">
+        <input type="radio"  value="{{$item->choice1}}" name="given_answer{{$counter}}">
         <span class="check"></span>
       </label>
       <label class="label">{{ $item->choice2 }}
-        <input type="radio" value="{{ $item->choice1 }}" name="given_answer{{ $counter }}">
+        <input type="radio" value="{{$item->choice1}}" name="given_answer{{$counter}}">
         <span class="check"></span>
       </label>
       <label class="label">{{ $item->choice3 }}
-        <input type="radio" value="{{ $item->choice1 }}" name="given_answer{{ $counter }}">
+        <input type="radio" value="{{$item->choice1}}" name="given_answer{{$counter}}">
         <span class="check"></span>
       </label>
       <label class="label">{{ $item->choice4 }}
-        <input type="radio" value="{{ $item->choice1 }}" name="given_answer{{ $counter }}">
+        <input type="radio" value="{{$item->choice1}}" name="given_answer{{$counter}}">
         <span class="check"></span>
       </label>
       <?php $counter++; ?>
