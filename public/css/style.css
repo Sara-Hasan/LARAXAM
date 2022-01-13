@@ -538,3 +538,7 @@ input:checked + label {
 		color: #fff;
 	}
 }
+.result{
+	margin:auto;
+	width:50%;
+}

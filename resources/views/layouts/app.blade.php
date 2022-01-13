@@ -35,10 +35,10 @@
                </a>
                <ul class="navbar-nav me-auto ">
                   <li class="nav-item me-3">
-                     <a class="nav-link" aria-current="page" href="#">Quizes</a>
+                     {{-- <a class="nav-link" aria-current="page" href="">Quizes</a> --}}
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="about.html">About</a>
+                     {{-- <a class="nav-link" href="about.html">About</a> --}}
                   </li>
                </ul>
                <div>

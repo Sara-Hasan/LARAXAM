@@ -52,14 +52,14 @@
                   <img src="{{  $item->image_exam }}" alt="">
                   <div class="quiz-card">
                      <div class="card-title">
-                       {{  $item->name }}
+                       {{  $item->name  }}
                      </div>
                      <ul>
                         <li> <i class="far fa-book-open"></i><p class="mx-1">5</p><p
                               class="dm-none">Question</p></li>
                         <li> <i class="far fa-history"></i><p class="mx-1">{{ $item->time }}</p><p
                               class="dm-none">Minute</p></li>
-                        <li><a href="{{ route('questionexam.create' , $item->id) }}" id="quizStart1" class="btn primaryBtn start-btn ">Start</a></li>
+                       <?php ?> <li><a href="{{ route('exam', $item->id) }}" id="quizStart1" class="btn primaryBtn start-btn ">Start</a></li>
                      </ul>
                   </div>
                </div>
